@@ -2,11 +2,11 @@
 /*
   Plugin Name: oEmbed Gist on StErOids
   Plugin URI: http://krtnb.ch/plugins/oembed-gist-on-steroids/
-  Version: 1.4.0
+  Version: 1.5.0
   Author: Daan Kortenbach
   Author URI: http://krtnb.ch/
   Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BKUCJXJJ8XJVY
-  Description: Embed source from gist.github.com and add the raw source in a noscript tag for SEO.
+  Description: Embed source from gist.github.com in posts and comments. Also adds the raw source in a noscript tag for SEO.
   Text Domain: oembed-gist
   Domain Path /languages/
 */

@@ -1,12 +1,12 @@
 === oEmbed Gist on StErOids ===
 Contributors: daankortenbach
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BKUCJXJJ8XJVY
-Tags: url, link, oembed, visual editor, post, gist, github, seo
+Tags: url, link, oembed, visual editor, post, gist, github, seo, comments
 Requires at least: 3.0
 Tested up to: 3.4.2
 Stable tag: 1.5.0
 
-Embed source from gist.github.com and add the raw source in a noscript tag for SEO.
+Embed source from gist.github.com in posts and comments. Also adds the raw source in a noscript tag for SEO.
 
 == Description ==
 
@@ -35,9 +35,6 @@ You are probably a developer ;)
 
 == Screenshots ==
 
-1. Copy URL from gist.github.com.
-1. You simply paste URL into WordPress.
-1. It just appears!
 
 == Changelog ==
 
@@ -61,7 +58,7 @@ You are probably a developer ;)
 
 == Credits ==
 
-Forked, cleaned, commented and SEO'd by Daan Kortenbach.
+Forked, cleaned, commented, expanded and SEO'd by Daan Kortenbach.
 Original plugin built by miyauchi (http://wordpress.org/extend/plugins/oembed-gist/). 
 
 == Contact ==
