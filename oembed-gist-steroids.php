@@ -163,12 +163,16 @@ class OGS_Gist {
 	 * @return string               [description]
 	 */
 	public function oembed_gist_filter( $comment_text ) {
-		global $wp_embed;
 
-		add_filter( 'embed_oembed_discover', '__return_false', 999 );
-		$comment_text = do_shortcode( $wp_embed->autoembed( $comment_text ) );
-		remove_filter( 'embed_oembed_discover', '__return_false', 999 );
+		if( strstr( $comment_text, 'https://gist.github.com/' ) ){
 
+			global $wp_embed;
+
+			add_filter( 'embed_oembed_discover', '__return_false', 999 );
+			$comment_text = do_shortcode( $wp_embed->autoembed( $comment_text ) );
+			remove_filter( 'embed_oembed_discover', '__return_false', 999 );
+		}
+		
 		return $comment_text;
 	}
 
