@@ -164,7 +164,12 @@ class OGS_Gist {
 	 */
 	public function oembed_gist_filter( $comment_text ) {
 
-		if( strstr( $comment_text, 'https://gist.github.com/' ) ){
+		if( preg_match( '#https://gist.github.com/([a-zA-Z0-9]+)(\#file_(.+))?$#i', $comment_text ) ) {
+		    
+		//     echo "A match was found.";
+		// } 
+
+		// if( strstr( $comment_text, 'https://gist.github.com/' ) ){
 
 			global $wp_embed;
 
@@ -172,7 +177,7 @@ class OGS_Gist {
 			$comment_text = do_shortcode( $wp_embed->autoembed( $comment_text ) );
 			remove_filter( 'embed_oembed_discover', '__return_false', 999 );
 		}
-		
+
 		return $comment_text;
 	}
 
