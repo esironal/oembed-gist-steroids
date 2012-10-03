@@ -164,18 +164,16 @@ class OGS_Gist {
 	 */
 	public function oembed_gist_filter( $comment_text ) {
 
-		if( preg_match( '#https://gist.github.com/([a-zA-Z0-9]+)(\#file_(.+))?$#i', $comment_text ) ) {
+		// Make sure only gists get outputted
+		if( preg_match( '#https://gist.github.com/([a-zA-Z0-9]+)(\#file_(.+))?$#i', $comment_text, $matches ) ) {
 		    
-		//     echo "A match was found.";
-		// } 
-
-		// if( strstr( $comment_text, 'https://gist.github.com/' ) ){
-
 			global $wp_embed;
 
 			add_filter( 'embed_oembed_discover', '__return_false', 999 );
-			$comment_text = do_shortcode( $wp_embed->autoembed( $comment_text ) );
+			$gist_shortcode = do_shortcode( $wp_embed->autoembed( $matches[0] ) );
 			remove_filter( 'embed_oembed_discover', '__return_false', 999 );
+
+			$comment_text = str_replace( $matches[0], $gist_shortcode, $comment_text );
 		}
 
 		return $comment_text;
