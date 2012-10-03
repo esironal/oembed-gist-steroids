@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: url, link, oembed, visual editor, post, gist, github, seo
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 
 Embed source from gist.github.com and add the raw source in a noscript tag for SEO.
 
@@ -40,6 +40,9 @@ You are probably a developer ;)
 1. It just appears!
 
 == Changelog ==
+
+= 1.5.0 =
+* Posting gist links in comments now shows gists in the comments.
 
 = 1.4.0 =
 * Forked by Daan Kortenbach. Added transient and added raw gist code to NOSCRIPT for SEO.
