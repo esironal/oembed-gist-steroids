@@ -39,7 +39,6 @@ Original by Takayuki Miyauchi (firegoby.jp)
 
 */
 
-new gist();
 
 /**
  * Class to embed Gists.
@@ -51,7 +50,7 @@ new gist();
  *
  * @since 1.4.0
  */
-class gist {
+class OGS_Gist {
 
 	/**
 	 * $noscript declaration.
@@ -144,6 +143,9 @@ class gist {
 				$p['id']
 			);
 
+			
+			add_filter( 'comment_text', array( &$this, 'oembed_gist_filter' ), 1 );
+
 			// return the output
 			if( $p['file'] ){
 
@@ -155,4 +157,18 @@ class gist {
 		}
 	}
 
+
+	public function oembed_gist_filter( $comment_text ) {
+		global $wp_embed;
+
+		add_filter( 'embed_oembed_discover', '__return_false', 999 );
+		$comment_text = $wp_embed->autoembed( $comment_text );
+		remove_filter( 'embed_oembed_discover', '__return_false', 999 );
+
+		return do_shortcode( $comment_text );
+	}
+
 }
+
+new OGS_Gist();
+
