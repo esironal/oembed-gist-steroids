@@ -157,15 +157,19 @@ class OGS_Gist {
 		}
 	}
 
-
+	/**
+	 * [oembed_gist_filter description]
+	 * @param  string $comment_text [description]
+	 * @return string               [description]
+	 */
 	public function oembed_gist_filter( $comment_text ) {
 		global $wp_embed;
 
 		add_filter( 'embed_oembed_discover', '__return_false', 999 );
-		$comment_text = $wp_embed->autoembed( $comment_text );
+		$comment_text = do_shortcode( $wp_embed->autoembed( $comment_text ) );
 		remove_filter( 'embed_oembed_discover', '__return_false', 999 );
 
-		return do_shortcode( $comment_text );
+		return $comment_text;
 	}
 
 }
